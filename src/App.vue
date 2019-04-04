@@ -1,8 +1,9 @@
 <template>
   <div id="app">
+    <Header/>
     <div id="nav">
-      <router-link to="/"> Bookshelf </router-link> |
-      <router-link to="/about"> Home </router-link>
+      <router-link to="/">Bookshelf</router-link> |
+      <router-link to="/about">Home</router-link>
     </div>
     <router-view/>
     <Footer/>
@@ -11,11 +12,13 @@
 
 <script>
 import Footer from "@/components/Footer.vue";
+import Header from "@/components/Header.vue";
 
 export default {
   name: "footer",
   components: {
-    Footer
+    Footer,
+    Header
   }
 };
 </script> 
