@@ -31,7 +31,6 @@ export default {
       bookURL: "https://api.myjson.com/bins/udbm5",
       books: [],
       search: " ",
-      showModal: false
     };
   },
   methods: {

@@ -1,32 +1,43 @@
 <template>
   <div>
-    <!-- <div v-for="book of filteredBooks" :key="book.id"> -->
-      <div class="flip-card m-1">
-        <div class="flip-card-inner d-flex">
-          <div class="flip-card-front bg-dark">
-            <img class="flip-card" v-bind:src="oneBook.portada">
-          </div>
-          <div class="flip-card-back" id="info">
-            <h3 class="mb-2 mt-3">{{oneBook.titulo}}</h3>
-            <p class="mx-3 mt-3">{{oneBook.descripcion}}</p>
-            <div>
-              <button class="btn btn-light" id="show-modal" @click="showModal = true">Show Me More</button>
-            </div>
+    <div class="flip-card m-1">
+      <div class="flip-card-inner d-flex">
+        <div class="flip-card-front bg-dark">
+          <img class="flip-card" v-bind:src="oneBook.portada">
+        </div>
+        <div class="flip-card-back" id="info">
+          <h3 class="mb-2 mt-3">{{oneBook.titulo}}</h3>
+          <p class="mx-3 mt-3">{{oneBook.descripcion}}</p>
+          <div>
+            <b-button @click="toggleModal"> Get Fancy </b-button>
           </div>
         </div>
       </div>
-    <!-- </div> -->
+    </div>
+    <b-modal v-model="showModal" :title="oneBook.titulo">
+      <img :src="oneBook.detalle">
+    </b-modal>
   </div>
 </template>
 
 <script>
 export default {
   name: "Book",
-  props: ['oneBook']
+  props: ["oneBook"],
+  data() {
+    return {
+      showModal: false
+    };
+  },
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal;
+    }
+  }
 };
 </script>
 
-<style>
+<style scoped>
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
@@ -70,5 +81,13 @@ export default {
   background-color: black;
   color: white;
   transform: rotateY(180deg);
+}
+
+.logo {
+  height: 250px;
+  width: 250px;
+}
+img {
+  width: 100%;
 }
 </style>
