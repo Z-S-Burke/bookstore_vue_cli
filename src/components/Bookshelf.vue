@@ -30,7 +30,7 @@ export default {
     return {
       bookURL: "https://api.myjson.com/bins/udbm5",
       books: [],
-      search: " ",
+      search: "",
     };
   },
   methods: {
