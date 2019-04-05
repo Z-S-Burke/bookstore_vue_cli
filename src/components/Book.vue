@@ -8,9 +8,7 @@
         <div class="flip-card-back" id="info">
           <h3 class="mb-2 mt-3">{{oneBook.titulo}}</h3>
           <p class="mx-3 mt-3">{{oneBook.descripcion}}</p>
-          <div>
-            <b-button @click="toggleModal"> Get Fancy </b-button>
-          </div>
+          <b-button @click="toggleModal">Get Fancy</b-button>
         </div>
       </div>
     </div>
@@ -88,6 +86,11 @@ export default {
   width: 250px;
 }
 img {
+  width: 100%;
+}
+
+b-button {
+  display: block;
   width: 100%;
 }
 </style>
